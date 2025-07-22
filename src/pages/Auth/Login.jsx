@@ -60,7 +60,7 @@ const Login = () => {
         </form>
 
         <p className="switch-text">
-          Don’t have an account? <Link to="/register">Register here   mh</Link>
+          Don’t have an account? <Link to="/register">Register here  fgjhfgjgj mh</Link>
         </p>
       </div>
     </div>
