@@ -29,20 +29,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🔁 Checkout main
+      - name: 🔁 Checkout Code
         uses: actions/checkout@v3
         with:
-          ref: main
           token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: 🤖 Configure Git
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: 🔀 Merge main → master
         run: |
-          git fetch origin master
           git checkout master
-          git merge origin/main --allow-unrelated-histories --no-edit
+          git merge origin/main --no-edit
           git push origin master
