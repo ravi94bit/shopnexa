@@ -42,6 +42,4 @@ jobs:
 
       - name: 🔀 Merge main → master
         run: |
-          git checkout master
-          git merge origin/main --no-edit
-          git push origin master
+
